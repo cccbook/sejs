@@ -5,7 +5,7 @@
 欄位   | 連結
 -------|---------------------------------------
 作者   | [陳鍾誠](http://www.nqu.edu.tw/educsie/index.php?act=blog&code=list&ids=4) 於 [金門大學](http://www.nqu.edu.tw/) [資訊工程系](http://www.nqu.edu.tw/educsie/index.php) 
-書籍   |  https://github.com/cccbook/sejs/wiki
+書籍   |  [軟體工程 -- 以 Node.js 為例](https://github.com/cccbook/sejs/wiki)
 範例   |  [example](example)
 練習   |  [exercise](exercise)
 專案   |  [project](project)
