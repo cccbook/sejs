@@ -1,0 +1,11 @@
+{
+  "name": "my-project",
+  "main": "lib/index.js",
+  "scripts": {
+    "build": "babel src/ -d lib/",
+    "prepublish": "yarn run build"
+  },
+  "devDependencies": {
+    "flow-bin": "^0.81.0"
+  }
+}
