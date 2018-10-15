@@ -1,0 +1,22 @@
+{
+  "name": "ccclodash",
+  "version": "0.0.2",
+  "description": "Reimplement some function of lodash",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha",
+    "cover": "nyc mocha",
+    "dist": "browserify index.js -o dist/ccclodash.js",
+    "docs": "jsdoc index.mjs -d docs -t node_modules/docdash"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chai": "^4.1.2"
+  },
+  "devDependencies": {
+    "docdash": "^1.0.0",
+    "gulp-concat": "^2.6.1",
+    "nyc": "^13.0.1"
+  }
+}

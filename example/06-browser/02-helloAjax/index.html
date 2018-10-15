@@ -1,0 +1,21 @@
+<html>
+<body>
+<script>
+async function fetchReadme() {
+  let r = await fetch(`/README.md`)
+  let text = await r.text()
+  console.log('text=', text)
+  document.getElementById('output').innerHTML = text
+}
+async function fetchJson() {
+  let r = await fetch(`/ccc.json`)
+  let json = await r.json()
+  document.getElementById('output').innerHTML = JSON.stringify(json, null, 2)
+}
+</script>
+<button id="fetchReadme" onclick="fetchReadme()">fetchReadme()</button>
+<button id="fetchJson" onclick="fetchJson()">fetchJson()</button>
+<pre id="output">
+</pre>
+</body>
+</html>
