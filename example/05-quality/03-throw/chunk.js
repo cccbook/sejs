@@ -2,7 +2,7 @@
  * Creates an array of elements split into groups the length of `size`.
  * If `array` can't be split evenly, the final chunk will be the remaining
  * elements.
- * 
+ *
  * @memberof _
  * @since 0.1.0
  * @category Array
@@ -19,7 +19,7 @@
  */
 
 function chunk (array = [], n = 1) {
-  if (!(Number.isInteger(n) && n >=0)) throw Error('chunk: n should be a positive integer')
+  if (!(Number.isInteger(n) && n >= 0)) throw Error('chunk: n should be a positive integer')
   if (!Array.isArray(array)) throw Error('chunk: first argument should be an array')
   // 如果要做上述檢查，或許可以改用 flow.js 或 typescript, 或用 is.is https://is.js.org/
   const clist = []

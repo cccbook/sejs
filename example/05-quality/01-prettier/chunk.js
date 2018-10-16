@@ -1,9 +1,9 @@
-function chunk(array = [], n) {
-  const clist = [];
+function chunk (array = [], n) {
+  const clist = []
   for (let i = 0; i <= array.length; i += n) {
-    clist.push(array.slice(i, i + n));
+    clist.push(array.slice(i, i + n))
   }
-  return clist;
+  return clist
 }
 
-module.exports = chunk;
+module.exports = chunk
