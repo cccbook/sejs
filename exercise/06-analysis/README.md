@@ -1,4 +1,11 @@
-# iChat -- 系統分析
+# 系統分析
+
+## 練習 1 -- 使用 PlantUML
+
+1. 安裝 PlantUML
+2. 安裝 VsCode 的 Markdown Extension 
+
+## 練習 3 -- iChat 系統分析
 
 0. 請設計一個聊天系統 iChat
 1. 請寫出 iChat 的使用個案，並畫出使用個案圖。
