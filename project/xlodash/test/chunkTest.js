@@ -1,5 +1,5 @@
 const assert = require('assert')
-const _ = require('../ccclodash')
+const _ = require('../index')
 
 describe('ccclodash', function () {
   describe('chunk', function () {
