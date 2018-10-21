@@ -21,6 +21,8 @@
   },
   "homepage": "https://github.com/cccbook/sejs#readme",
   "dependencies": {
-    "lodash": "^4.17.11"
+    "koa": "^2.5.3",
+    "lodash": "^4.17.11",
+    "supertest": "^3.3.0"
   }
 }
