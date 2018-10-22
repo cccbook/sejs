@@ -1,4 +1,3 @@
-
 const logger = require('koa-logger')
 const router = require('koa-router')()
 const koaBody = require('koa-body')
@@ -6,7 +5,7 @@ const koaJson = require('koa-json')
 const koaStatic = require('koa-static')
 
 const Koa = require('koa')
-const app = module.exports = new Koa()
+const app = (module.exports = new Koa())
 
 // "database"
 
@@ -23,9 +22,7 @@ app.use(koaStatic('./public'))
 
 // route definitions
 
-router.get('/list', list)
-  .get('/post/:id', show)
-  .post('/post', create)
+router.get('/list', list).get('/post/:id', show).post('/post', create)
 
 app.use(router.routes())
 app.use(koaJson())
@@ -66,7 +63,7 @@ async function create (ctx) {
 }
 
 // listen
-
-module.exports = app.listen(3000)
-console.log('Server run at http://localhost:3000')
-
+if (!module.parent) {
+  app.listen(3000)
+  console.log('Server run at http://localhost:3000')
+}

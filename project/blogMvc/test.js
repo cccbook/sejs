@@ -1,7 +1,6 @@
 /* eslint-env mocha */
 const expect = require('chai').expect
-const app = require('./app')
-const server = app.listen()
+const server = require('./server').listen()
 const request = require('supertest').agent(server)
 
 describe('簡易網誌系統', function () {

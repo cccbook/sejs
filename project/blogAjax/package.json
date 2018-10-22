@@ -1,0 +1,23 @@
+{
+  "name": "blogajax",
+  "version": "0.0.1",
+  "description": "AJAX 型的網誌",
+  "main": "server.js",
+  "dependencies": {
+    "koa": "^2.5.3",
+    "koa-body": "^4.0.4",
+    "koa-json": "^2.0.2",
+    "koa-logger": "^3.2.0",
+    "koa-router": "^7.4.0",
+    "koa-static": "^5.0.0"
+  },
+  "devDependencies": {
+    "puppeteer": "^1.9.0"
+  },
+  "scripts": {
+    "test": "mocha --timeout 100000",
+    "start": "node server.js"
+  },
+  "author": "ccc",
+  "license": "MIT"
+}

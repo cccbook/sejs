@@ -5,12 +5,13 @@ const router = require('koa-router')()
 const koaBody = require('koa-body')
 
 const Koa = require('koa')
-const app = module.exports = new Koa()
+const app = (module.exports = new Koa())
 
 app.use(logger())
 app.use(koaBody())
 
-router.get('/', list)
+router
+  .get('/', list)
   .get('/post/new', add)
   .get('/post/:id', show)
   .post('/post', create)
