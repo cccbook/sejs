@@ -1,4 +1,10 @@
-var R = {}
+const blog = {
+  controller : window,
+  view: {},
+  model: {}
+}
+
+// const R = {}
 
 window.onhashchange = async function () {
   var r
@@ -6,17 +12,15 @@ window.onhashchange = async function () {
   console.log('tokens=', tokens)
   switch (tokens[0]) {
     case '#show':
-      r = await window.fetch('/post/' + tokens[1])
-      let post = await r.json()
-      R.show(post)
+      let post = await blog.model.getPost(tokens[1])
+      blog.view.show(post)
       break
     case '#new':
-      R.new()
+      blog.view.new()
       break
     default:
-      r = await window.fetch('/list/')
-      let posts = await r.json()
-      R.list(posts)
+      let posts = await blog.model.list()
+      blog.view.list(posts)
       break
   }
 }
@@ -25,12 +29,12 @@ window.onload = function () {
   window.onhashchange()
 }
 
-R.layout = function (title, content) {
+blog.view.layout = function (title, content) {
   document.querySelector('title').innerText = title
   document.querySelector('#content').innerHTML = content
 }
 
-R.list = function (posts) {
+blog.view.list = function (posts) {
   let list = []
   for (let post of posts) {
     list.push(`
@@ -48,29 +52,29 @@ R.list = function (posts) {
     ${list.join('\n')}
   </ul>
   `
-  return R.layout('Posts', content)
+  return blog.view.layout('Posts', content)
 }
 
-R.new = function () {
-  return R.layout('New Post', `
+blog.view.new = function () {
+  return blog.view.layout('New Post', `
   <h1>New Post</h1>
   <p>Create a new post.</p>
   <form>
     <p><input id="title" type="text" placeholder="Title" name="title"></p>
     <p><textarea id="body" placeholder="Contents" name="body"></textarea></p>
-    <p><input id="savePost" type="button" onclick="R.savePost()" value="Create"></p>
+    <p><input id="savePost" type="button" onclick="blog.model.savePost()" value="Create"></p>
   </form>
   `)
 }
 
-R.show = function (post) {
-  return R.layout(post.title, `
+blog.view.show = function (post) {
+  return blog.view.layout(post.title, `
     <h1>${post.title}</h1>
     <p>${post.body}</p>
   `)
 }
 
-R.savePost = async function () {
+blog.model.savePost = async function () {
   let title = document.querySelector('#title').value
   let body = document.querySelector('#body').value
   let r = await window.fetch('/post', {
@@ -79,4 +83,16 @@ R.savePost = async function () {
   })
   window.location.hash = '#list'
   return r
+}
+
+blog.model.getPost = async function (id) {
+  let r = await window.fetch('/post/' + id)
+  let post = await r.json()
+  return post
+}
+
+blog.model.list = async function () {
+  let r = await window.fetch('/list/')
+  let posts = await r.json()
+  return posts  
 }
